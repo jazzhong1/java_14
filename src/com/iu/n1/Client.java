@@ -12,9 +12,11 @@ public class Client {
 
 		try {
 			socket = new Socket("192.168.20.58", 8282);
+			//클라이언트도 소켓을 하나만만든다.
 
 			boolean check = true;
 			while (check) {
+				
 				OutputStream os = socket.getOutputStream(); // byte를 처리하는애
 				OutputStreamWriter ow = new OutputStreamWriter(os); // 문자를 쓰려고
 				BufferedWriter bw = new BufferedWriter(ow); // 문자열을 쓰려고
