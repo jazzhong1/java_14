@@ -50,10 +50,7 @@ public class ServerNetwort {
 				lunchDTO = menuRandom.randoml(lda);
 
 				String str ="메뉴:"+lunchDTO.getMenu() +"가격:"+String.valueOf(lunchDTO.getPrice());
-				bw.write("추천메뉴");
-				bw.flush();
-				bw.write("메뉴:"+lunchDTO.getMenu());
-				bw.write("가격:"+String.valueOf(lunchDTO.getPrice()));
+				bw.write(str);
 				bw.flush();
 				
 			} else if (num == 2) {
