@@ -49,7 +49,7 @@ public class ServerNetwort {
 				lunchDTO = new LunchDTO();
 				lunchDTO = menuRandom.randoml(lda);
 
-				String str ="메뉴:"+lunchDTO.getMenu() +"가격:"+String.valueOf(lunchDTO.getPrice());
+				String str ="메뉴:"+lunchDTO.getMenu()+"가격:"+String.valueOf(lunchDTO.getPrice());
 				bw.write(str);
 				bw.flush();
 				
