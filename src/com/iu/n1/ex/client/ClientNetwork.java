@@ -16,11 +16,9 @@ public class ClientNetwork {
 	private InputStreamReader ir;
 	private BufferedReader br;
 	
-	private LunchDAO dao;
 
 	
 	public ClientNetwork() {
-		dao=new LunchDAO();
 	}
 	
 	public void netWort(int num){

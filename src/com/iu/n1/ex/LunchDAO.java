@@ -9,7 +9,6 @@ public class LunchDAO {
 	private FileReader fr;
 	private BufferedReader br;
 	private StringTokenizer st;
-	private Random random;
 	private ArrayList<LunchDTO> ar;
 
 	public LunchDAO() {

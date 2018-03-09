@@ -10,12 +10,14 @@ public class ServerNetwort {
 
 	private ServerSocket serverSocket;
 	private Socket socket;
+	
 	private InputStream is;
 	private InputStreamReader ir;
 	private BufferedReader br;
 	private OutputStream os;
 	private OutputStreamWriter ow;
 	private BufferedWriter bw;
+	
 	private LunchDAO idao;
 	private DinnerDAO ddao;
 	private MenuRandom menuRandom;
@@ -49,16 +51,16 @@ public class ServerNetwort {
 				lunchDTO = new LunchDTO();
 				lunchDTO = menuRandom.randoml(lda);
 
-				String str ="메뉴:"+lunchDTO.getMenu()+"가격:"+String.valueOf(lunchDTO.getPrice());
+				String str ="메뉴:"+lunchDTO.getMenu()+"\t"+"가격:"+String.valueOf(lunchDTO.getPrice());
 				bw.write(str);
-				bw.flush();
+				bw.flush();		//flush안해주면 개고생
 				
 			} else if (num == 2) {
 				ArrayList<DinnerDTO> dda = ddao.getMember();
 				dinnerDTO = new DinnerDTO();
 				dinnerDTO = menuRandom.randomd(dda);
 
-				String str1 ="메뉴:"+ dinnerDTO.getMenu()+"가격:"+ String.valueOf(dinnerDTO.getPrice());
+				String str1 ="메뉴:"+ dinnerDTO.getMenu()+"\t"+"가격:"+ String.valueOf(dinnerDTO.getPrice());
 				bw.write(str1);
 				bw.flush();
 			}
