@@ -20,7 +20,7 @@ public class MenuRandom {
 		Random random=new Random();
 		int index=random.nextInt(dda.size()+1);
 		LunchDTO lunchDTO=new LunchDTO();
-		lunchDTO=dda.get(2);
+		lunchDTO=dda.get(index);
 		return lunchDTO;
 	}
 	

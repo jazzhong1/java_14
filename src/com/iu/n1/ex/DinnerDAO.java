@@ -44,13 +44,7 @@ public class DinnerDAO {
 		
 	}
 	
-	public DinnerDTO random(ArrayList<DinnerDTO> diarray){
-		random=new Random();
-		int index=random.nextInt(diarray.size()+1);
-		DinnerDTO dinnerDTO=new DinnerDTO();
-		dinnerDTO=diarray.get(index);
-		return dinnerDTO;
-	}
+
 		
 	
 }
