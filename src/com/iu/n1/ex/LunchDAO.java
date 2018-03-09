@@ -46,12 +46,6 @@ public class LunchDAO {
 		
 	}
 	
-	public LunchDTO random(ArrayList<LunchDTO> luarray){
-		random=new Random();
-		int index=random.nextInt(luarray.size()+1);
-		LunchDTO lunchDTO=new LunchDTO();
-		lunchDTO=luarray.get(index);
-		return lunchDTO;
-	}
+	
 
 }

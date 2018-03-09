@@ -1,9 +1,28 @@
 package com.iu.n1.ex.server;
 
+import java.util.*;
+
+import com.iu.n1.ex.*;
+
 public class MenuRandom {
 
-	public MenuRandom() {
-		// TODO 자동 생성된 생성자 스텁
-	}
 
+	public DinnerDTO randomd(ArrayList<DinnerDTO> dda){
+		Random random=new Random();
+		int index=random.nextInt(dda.size()+1);
+		DinnerDTO dinnerDTO=new DinnerDTO();
+		dinnerDTO=dda.get(index);
+		return dinnerDTO;
+	}
+	
+
+	public LunchDTO randoml(ArrayList<LunchDTO> dda){
+		Random random=new Random();
+		int index=random.nextInt(dda.size()+1);
+		LunchDTO lunchDTO=new LunchDTO();
+		lunchDTO=dda.get(2);
+		return lunchDTO;
+	}
+	
+	
 }

@@ -2,6 +2,7 @@ package com.iu.n1.ex.client;
 
 import java.io.*;
 import java.net.*;
+import java.util.*;
 
 import com.iu.n1.ex.*;
 
@@ -11,32 +12,35 @@ public class ClientNetwork {
 	private OutputStream os;
 	private OutputStreamWriter ow;
 	private BufferedWriter bw;
+	private InputStream is;
+	private InputStreamReader ir;
+	private BufferedReader br;
+	
+	private LunchDAO dao;
 
 	
+	public ClientNetwork() {
+		dao=new LunchDAO();
+	}
 	
-	
-	public void netWort(DinnerDTO ddto,LunchDTO ldto){
-		String menu=null;
-		int price=0;
-		String result;
+	public void netWort(int num){
+		
 		try {
 			socket=new Socket("192.168.20.58", 8282);
 			os=socket.getOutputStream();
-			if(ddto!=null){
-				menu=ddto.getMenu();
-				price=ddto.getPrice();
-				result="menu:"+menu+"\n"+"price:"+price;
-			}
-			else{
-				menu=ldto.getMenu();
-				price=ldto.getPrice();
-				result="menu:"+menu+"price:"+price;
-			}
-			
 			ow=new OutputStreamWriter(os);
 			bw=new BufferedWriter(ow);
-			bw.write(result);
+			bw.write(num);
 			bw.flush();
+			
+
+			is=socket.getInputStream();
+			ir=new InputStreamReader(is);
+			ArrayList<String> s=new ArrayList<>();
+			br=new BufferedReader(ir);
+			System.out.println(br.readLine());
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
